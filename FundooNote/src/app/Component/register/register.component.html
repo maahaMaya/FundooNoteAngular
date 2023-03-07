@@ -1,0 +1,89 @@
+
+
+<div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="header">
+        <mat-card-header class="mat-card-header">
+            <mat-card-title class="mat-card-title">
+                <div class="mat-card-header-text">
+                    <span style="color: rgba(34, 34, 216, 0.788);">F</span>
+                    <span style="color: rgba(209, 12, 22, 0.788);">u</span>
+                    <span style="color: rgba(216, 143, 34, 0.788);">n</span>
+                    <span style="color: rgba(34, 34, 216, 0.788);">d</span>
+                    <span style="color: rgba(34, 216, 49, 0.788);">o</span>
+                    <span style="color: rgba(209, 12, 22, 0.788);">o</span>
+                </div>
+
+            </mat-card-title>
+            <div>
+                <p class="register-text">Create your fundoo Account</p>
+            </div>
+        </mat-card-header>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="container-class">
+                <div class="name-field" fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput name="first_name" type="text" required formControlName="firstName">
+                        <mat-error>Enter Valid Email</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput name="last_name" type="text" required formControlName="lastName">
+                        <mat-error>Last name is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="email-field" fxLayout="row">
+                    <mat-form-field floatLabel="auto" appearance="outline" class="email-mat-form-field">
+                        <mat-label>Email</mat-label>
+                        <input matInput name="email" type="email" required formControlName="email">
+                        <mat-hint class="emailhint">You can use letters, numbers & periods</mat-hint>
+                        <mat-error>
+                            <div>Email is required</div>
+                            <div>Email must be a valid email address</div>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="usemycurrentemail">
+                    <mat-card-actions class="mat-card-actions">
+                        <a href="" class=""> Use my current email address instead</a>
+                    </mat-card-actions>
+                </div>
+
+                <div class="password-field" fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input class="inputbutton" matInput name="password" type="password" required formControlName="password">
+                        <mat-hint class="passwordhint" fxHide.xs>Use 8 or more characters with a mix of letters, numbers & symbols
+                        </mat-hint>
+                        <mat-error>First name is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput name="confirmpassword" type="password" required formControlName="confirmPassword">
+                        <mat-hint class="passwordhint">Use 8 or more characters with a mix of letters, numbers & symbols
+                        </mat-hint>
+                        <mat-error>Last name is required</mat-error>
+                    </mat-form-field>
+
+                </div>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+                </section>
+            </div>
+            <mat-card-actions class="mat-card-actions">
+                <a routerLink="/login" class="signininstead"> Sign in instead </a>
+                    <button mat-raised-button class="mat-raised-button" >Next</button>
+            </mat-card-actions>
+        </form>
+                        
+
+    </div>
+
+    <div fxHide.xs>
+        <img src="../../../assets/accounts.JPG" class="sideimage" alt="" > <br>
+        <mat-hint class="logohint">One account. All of Google working for you.</mat-hint>
+    </div>
+</div>

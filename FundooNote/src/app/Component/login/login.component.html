@@ -1,0 +1,57 @@
+<html>
+<div fxLayoutAlign="space-around center" fxFlex="100">
+  <mat-card fxFlex="30" class="card" fxFlex.xs="100">
+    <div>
+      <mat-card-title class="fundoo" fxLayout="row" fxLayoutAlign="center center">
+        <div class="mat-card-header-text">
+            <span style="color: rgba(34, 34, 216, 0.788);">F</span>
+            <span style="color: rgba(209, 12, 22, 0.788);">u</span>
+            <span style="color: rgba(216, 143, 34, 0.788);">n</span>
+            <span style="color: rgba(34, 34, 216, 0.788);">d</span>
+            <span style="color: rgba(34, 216, 49, 0.788);">o</span>
+            <span style="color: rgba(209, 12, 22, 0.788);">o</span>
+        </div>
+      </mat-card-title>
+    </div>
+
+    <!-- </mat-card-header> -->
+
+    <!-- title & subtitle -->
+    <div>
+      <mat-card-title calss="signin" div fxLayout="row" fxLayoutAlign="center center" style="padding: 15px;">Log In</mat-card-title>
+      <mat-card-subtitle div fxLayout="row" fxLayoutAlign="center center" style="font-size:16px;color:black">Use your Fundoo Account</mat-card-subtitle>
+    </div>
+
+    <body>
+      <!-- usre email id -->
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="column" fxLayoutAlign="space-around center" >
+        <mat-form-field appearance="outline" class="email">
+          <mat-label aria-autocomplete="off">Email id</mat-label>
+          <input matInput placeholder="Enter your email id" formControlName="email" />
+          <mat-error>Enter Valid Email</mat-error>
+        </mat-form-field>
+
+        <!-- user password -->
+
+        <mat-form-field appearance="outline" class="password">
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="Enter your password" autocomplete="off" requried  formControlName="password"/>
+          <mat-error>Enter Valid Password</mat-error>
+        </mat-form-field>
+        <div><button mat-button  class="pass-link" fxLayoutAlign="center" routerLink="/forgotpassword">Forgot Password?</button></div>
+      </div>
+      
+      <br>
+      <div id="register">
+        <button mat-button class="link" fxLayoutAlign="center" routerLink="/register">Create New Account</button>
+        <button id="sigi-button" mat-button  fxLayoutAlign="center center" mat-raised-button
+          color="primary" mat-button aria-label="Show an example snack-bar">Login</button>
+      </div>
+      <!-- Sign in button -->
+      </form>
+    </body>
+  </mat-card>
+</div>
+
+</html>
